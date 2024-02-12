@@ -1,20 +1,3 @@
-export interface SearchResult {
-  account_id: number;
-  avatarfull: string;
-  personaname: string;
-  last_match_time: string;
-  similarity: number;
-}
-
-export interface Hero {
-  id: string;
-  name: string;
-  localized_name: string;
-  primary_attr: 'agi' | 'str' | 'int' | 'all';
-  attack_type: 'Melee' | 'Ranged';
-  roles: string[];
-}
-
 export interface PlayerInfo {
   rank_tier: number | null;
   leaderboard_rank: number | null;
@@ -25,12 +8,12 @@ export interface PlayerInfo {
   };
 }
 
-export interface Winrate {
+export interface PlayerWinrate {
   win: number;
   lose: number;
 }
 
-export interface Match {
+export interface PlayerMatch {
   match_id: number;
   player_slot: number;
   radiant_win: boolean;
@@ -54,7 +37,7 @@ export interface Match {
   party_size: number | null;
 }
 
-export interface Teammate {
+export interface PlayerTeammate {
   account_id: string;
   with_games: number;
   with_win: number;
@@ -62,7 +45,7 @@ export interface Teammate {
   avatar: string;
 }
 
-export interface Total {
+export interface PlayerTotal {
   field:
     | 'kills'
     | 'deaths'
@@ -76,7 +59,7 @@ export interface Total {
   summ: number;
 }
 
-export interface PlayersHeroes {
+export interface PlayerHeroes {
   hero_id: number;
   last_played: number;
   games: number;

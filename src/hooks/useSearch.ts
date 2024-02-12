@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 
 import { apiUrl, fetcher } from '../helpers/api';
-import { SearchResult } from '../types';
+import { SearchResult } from '../types/search';
 
 export default function useNameSearch(name: string) {
   const {
