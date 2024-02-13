@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './app';
-import { Players, Heroes } from './pages';
+import {
+  Players,
+  Heroes,
+  Player,
+  PlayerOverview,
+  PlayerTeammates,
+  PlayerHeroes,
+  Hero,
+} from './pages';
 
 import './index.css';
 
@@ -11,14 +19,37 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <h2>Error occured</h2>,
     children: [
       {
         path: 'players',
         element: <Players />,
       },
       {
+        path: 'players/:playerID',
+        element: <Player />,
+        children: [
+          {
+            path: '',
+            element: <PlayerOverview />,
+          },
+          {
+            path: 'heroes',
+            element: <PlayerHeroes />,
+          },
+          {
+            path: 'teammates',
+            element: <PlayerTeammates />,
+          },
+        ],
+      },
+      {
         path: 'heroes',
         element: <Heroes />,
+      },
+      {
+        path: 'heroes/:heroId',
+        element: <Hero />,
       },
     ],
   },
