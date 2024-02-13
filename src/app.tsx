@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.module.css';
+import { Outlet } from 'react-router-dom';
+
+import Header from './components/header';
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <Header />
+      <Outlet />
     </div>
   );
 }

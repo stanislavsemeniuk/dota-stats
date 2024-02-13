@@ -32,3 +32,11 @@ a:active {
   color: inherit;
   outline: none;
 }
+
+#root {
+  --title-size: 24px;
+  --padding-xs: 6px;
+  --padding-sm: 8px;
+  --padding-md: 12px;
+  --padding-lg: 24px;
+}

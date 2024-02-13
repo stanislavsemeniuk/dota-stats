@@ -9,7 +9,7 @@ export function useHeroes() {
     error,
     isLoading,
   } = useSWR<Hero[]>(`${apiUrl}/heroStats`, fetcher, {
-    refreshInterval: 24 * 60 * 60 * 1000, // 24 часа в миллисекундах
+    refreshInterval: 24 * 60 * 60 * 1000,
     revalidateOnMount: false,
     revalidateOnFocus: false,
   });
