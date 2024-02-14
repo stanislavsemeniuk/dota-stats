@@ -10,6 +10,10 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom, #001f3f, #00172b);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -34,9 +38,9 @@ a:active {
 }
 
 #root {
-  --title-size: 24px;
-  --padding-xs: 6px;
-  --padding-sm: 8px;
-  --padding-md: 12px;
-  --padding-lg: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  --additional-color: #3498db;
+  --additional-color-hover: #2c81ba;
 }

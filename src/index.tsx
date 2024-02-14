@@ -11,6 +11,7 @@ import {
   PlayerTeammates,
   PlayerHeroes,
   Hero,
+  ErrorPage,
 } from './pages';
 
 import './index.css';
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <h2>Error occured</h2>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: 'players',

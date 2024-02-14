@@ -5,3 +5,4 @@ export * from './players/player/overview';
 export * from './players/player/teammates';
 export * from './heroes';
 export * from './heroes/hero';
+export * from './error';
