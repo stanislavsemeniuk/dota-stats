@@ -11,11 +11,11 @@ import {
 
 export function usePlayerShortInfo(accountId: number) {
   const {
-    data: playerShort,
+    data: playerShortInfo,
     error,
     isLoading,
   } = useSWR<IPlayerInfo>(`${apiUrl}/players/${accountId}`, fetcher);
-  return { playerShort, error, isLoading };
+  return { playerShortInfo, error, isLoading };
 }
 
 export function usePlayerWinrate(accountId: number) {

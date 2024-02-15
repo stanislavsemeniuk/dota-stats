@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.avatar {
+  max-width: 120px;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  max-width: 100%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.name {
+  font-size: 28px;
+}
+
+.winRate {
+  font-size: 18px;
+  display: flex;
+  gap: 4px;
+}
+
+.win {
+  color: var(--success-color);
+}
+
+.lose {
+  color: var(--error-color);
+}
+
+.winRatePercents {
+  font-size: 18px;
+}
+
+.navbar {
+  margin: 16px 0;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.navbar a {
+  padding: 12px 24px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--additional-bg-second);
+}
+
+.navbar a.active {
+  background: var(--link-color);
+}

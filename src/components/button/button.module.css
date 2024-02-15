@@ -1,7 +1,7 @@
 .button {
   border: none;
   outline: none;
-  background: var(--additional-color);
+  background: var(--link-color);
   padding: 8px 12px;
   border-radius: 4px;
   color: #fff;
@@ -10,5 +10,5 @@
 }
 
 .button:hover {
-  background: var(--additional-color-hover);
+  background: var(--link-color-hover);
 }

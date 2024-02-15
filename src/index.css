@@ -41,9 +41,11 @@ a:active {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  --additional-color: #3498db;
-  --additional-color-hover: #2c81ba;
+  --link-color: #3498db;
+  --link-color-hover: #2c81ba;
   --main-bg: linear-gradient(to bottom, #001f3f, #00172b);
   --additional-bg-first: #00264d;
   --additional-bg-second: #003366;
+  --error-color: #d9534f;
+  --success-color: #5cb85c;
 }
