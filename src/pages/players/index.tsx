@@ -9,7 +9,7 @@ import styles from './players.module.css';
 
 function Players() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const nickname = new URLSearchParams(searchParams).get('nickname');
+  const nickname = searchParams.get('nickname');
   const { users, isLoading, error } = useNameSearch(nickname || '');
 
   const {
