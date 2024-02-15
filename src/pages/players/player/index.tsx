@@ -3,7 +3,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 import { usePlayerShortInfo, usePlayerWinrate } from '../../../hooks/usePlayer';
-import { countWinRate } from '../../../helpers/calculations';
+import { countWinRateWithoutTotalGames } from '../../../helpers/calculations';
 
 import styles from './player.module.css';
 
@@ -26,7 +26,8 @@ function Player() {
               <span className={styles.lose}>{playerWinRate?.lose}</span>
             </div>
             <div className={styles.winRatePercents}>
-              {playerWinRate && countWinRate(playerWinRate.win, playerWinRate.lose) + '%'}
+              {playerWinRate &&
+                countWinRateWithoutTotalGames(playerWinRate.win, playerWinRate.lose) + '%'}
             </div>
           </div>
         </div>

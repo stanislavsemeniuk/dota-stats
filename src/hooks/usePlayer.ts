@@ -50,7 +50,7 @@ export function usePlayerTeammates(accountId: number) {
     data: teammates,
     error,
     isLoading,
-  } = useSWR<IPlayerTeammate>(`${apiUrl}/players/${accountId}/peers`, fetcher);
+  } = useSWR<IPlayerTeammate[]>(`${apiUrl}/players/${accountId}/peers`, fetcher);
   return { teammates, error, isLoading };
 }
 
