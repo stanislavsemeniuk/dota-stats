@@ -5,13 +5,14 @@ import { usePlayerTeammates } from '../../../../hooks/usePlayer';
 import { Teammate } from '../../../../components';
 
 import styles from './teammates.module.css';
+import playerStyles from '../player.module.css';
 
 function PlayerTeammates() {
   const { playerId } = useParams();
   const { teammates } = usePlayerTeammates(Number(playerId));
   return (
     <div>
-      <h4 className={styles.sectionTitle}>Teammates</h4>
+      <h4 className={playerStyles.sectionTitle}>Teammates</h4>
       <div className={styles.teammatesWrapper}>
         <div className={styles.tableHeader}>
           <div></div>

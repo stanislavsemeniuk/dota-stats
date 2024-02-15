@@ -59,7 +59,7 @@ export interface IPlayerTotal {
   summ: number;
 }
 
-export interface IPlayerHeroes {
+export interface IPlayerHero {
   hero_id: number;
   last_played: number;
   games: number;

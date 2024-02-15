@@ -6,7 +6,7 @@ import {
   IPlayerWinrate,
   IPlayerMatch,
   IPlayerTeammate,
-  IPlayerHeroes,
+  IPlayerHero,
 } from '../types/player';
 
 export function usePlayerShortInfo(accountId: number) {
@@ -32,7 +32,7 @@ export function usePlayerHeroes(accountId: number) {
     data: heroes,
     error,
     isLoading,
-  } = useSWR<IPlayerHeroes>(`${apiUrl}players/${accountId}/heroes`, fetcher);
+  } = useSWR<IPlayerHero[]>(`${apiUrl}/players/${accountId}/heroes`, fetcher);
   return { heroes, error, isLoading };
 }
 

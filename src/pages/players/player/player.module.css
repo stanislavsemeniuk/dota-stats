@@ -70,3 +70,7 @@
 .navbar a.active {
   background: var(--link-color);
 }
+
+.sectionTitle {
+  font-size: 18px;
+}
