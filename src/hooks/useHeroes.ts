@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 
-import { fetcher, apiUrl } from '../helpers/api';
+import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
 import { IHero, IHeroMatchup } from '../types/heroes';
 
 export function useHeroes() {
@@ -8,11 +8,7 @@ export function useHeroes() {
     data: heroesStats,
     error,
     isLoading,
-  } = useSWR<IHero[]>(`${apiUrl}/heroStats`, fetcher, {
-    refreshInterval: 24 * 60 * 60 * 1000,
-    revalidateOnMount: false,
-    revalidateOnFocus: false,
-  });
+  } = useSWR<IHero[]>(`${apiUrl}/heroStats`, fetcher, revalidateProperties);
   return { heroesStats, error, isLoading };
 }
 
@@ -21,6 +17,6 @@ export function useHeroMatchup(heroId: number) {
     data: matchups,
     error,
     isLoading,
-  } = useSWR<IHeroMatchup[]>(`${apiUrl}/heroes/${heroId}/matchups`, fetcher);
+  } = useSWR<IHeroMatchup[]>(`${apiUrl}/heroes/${heroId}/matchups`, fetcher, revalidateProperties);
   return { matchups, error, isLoading };
 }

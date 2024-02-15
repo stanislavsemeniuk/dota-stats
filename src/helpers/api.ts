@@ -5,5 +5,8 @@ export const fetcher = async (url: string) => {
 
 export const apiUrl = 'https://api.opendota.com/api';
 
-export const fetchSearchResults = async (nickname: string) =>
-  await fetcher(`${apiUrl}/search/?q=${nickname}`);
+export const revalidateProperties = {
+  revalidateOnMount: true,
+  revalidateOnFocus: false,
+  refreshInterval: 24 * 60 * 60 * 1000,
+};

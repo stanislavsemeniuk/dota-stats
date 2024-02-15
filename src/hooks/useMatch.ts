@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 
-import { fetcher, apiUrl } from '../helpers/api';
+import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
 import { IMatchFullInfo } from '../types/matches';
 
 export default function useMatchInfo(matchId: number) {
@@ -8,6 +8,6 @@ export default function useMatchInfo(matchId: number) {
     data: matchInfo,
     error,
     isLoading,
-  } = useSWR<IMatchFullInfo>(`${apiUrl}matches/${matchId}`, fetcher);
+  } = useSWR<IMatchFullInfo>(`${apiUrl}matches/${matchId}`, fetcher, revalidateProperties);
   return { matchInfo, error, isLoading };
 }
