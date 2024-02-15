@@ -34,7 +34,7 @@ function Players() {
           Search
         </Button>
       </form>
-      {users && users.length < 1 ? (
+      {!users || users.length < 1 ? (
         <div className={styles.emptySearch}>
           <h3>Enter a nickname and find a player you need</h3>
         </div>
