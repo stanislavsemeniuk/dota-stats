@@ -1,0 +1,29 @@
+.form {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.emptySearch {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchResults {
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--additional-bg-first);
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .searchResults {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

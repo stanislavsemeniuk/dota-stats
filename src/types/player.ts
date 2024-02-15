@@ -1,4 +1,4 @@
-export interface PlayerInfo {
+export interface IPlayerInfo {
   rank_tier: number | null;
   leaderboard_rank: number | null;
   profile: {
@@ -8,12 +8,12 @@ export interface PlayerInfo {
   };
 }
 
-export interface PlayerWinrate {
+export interface IPlayerWinrate {
   win: number;
   lose: number;
 }
 
-export interface PlayerMatch {
+export interface IPlayerMatch {
   match_id: number;
   player_slot: number;
   radiant_win: boolean;
@@ -37,7 +37,7 @@ export interface PlayerMatch {
   party_size: number | null;
 }
 
-export interface PlayerTeammate {
+export interface IPlayerTeammate {
   account_id: string;
   with_games: number;
   with_win: number;
@@ -45,7 +45,7 @@ export interface PlayerTeammate {
   avatar: string;
 }
 
-export interface PlayerTotal {
+export interface IPlayerTotal {
   field:
     | 'kills'
     | 'deaths'
@@ -59,7 +59,7 @@ export interface PlayerTotal {
   summ: number;
 }
 
-export interface PlayerHeroes {
+export interface IPlayerHeroes {
   hero_id: number;
   last_played: number;
   games: number;

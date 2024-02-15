@@ -1,13 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header from './components/header';
+import { Header } from './components';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
-      <Outlet />
+      <div style={{ width: '80%', margin: '32px auto' }}>
+        <Outlet />
+      </div>
     </div>
   );
 }

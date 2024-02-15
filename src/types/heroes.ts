@@ -1,4 +1,4 @@
-export interface Hero {
+export interface IHero {
   id: string;
   name: string;
   localized_name: string;
@@ -12,7 +12,7 @@ export interface Hero {
   pub_win_trend: number[];
 }
 
-export interface HeroMatchup {
+export interface IHeroMatchup {
   hero_id: number;
   games_played: number;
   wins: number;

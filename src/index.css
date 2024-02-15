@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-size: 14px;
 }
@@ -43,4 +43,7 @@ a:active {
   flex-direction: column;
   --additional-color: #3498db;
   --additional-color-hover: #2c81ba;
+  --main-bg: linear-gradient(to bottom, #001f3f, #00172b);
+  --additional-bg-first: #00264d;
+  --additional-bg-second: #003366;
 }

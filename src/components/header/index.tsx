@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './header.module.css';
 
-export default function Header() {
+function Header() {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>Dota Stats</h1>
@@ -21,3 +21,5 @@ export default function Header() {
     </header>
   );
 }
+
+export { Header };

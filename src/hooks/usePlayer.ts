@@ -2,11 +2,11 @@ import useSWR from 'swr';
 
 import { fetcher, apiUrl } from '../helpers/api';
 import {
-  PlayerInfo,
-  PlayerWinrate,
-  PlayerMatch,
-  PlayerTeammate,
-  PlayerHeroes,
+  IPlayerInfo,
+  IPlayerWinrate,
+  IPlayerMatch,
+  IPlayerTeammate,
+  IPlayerHeroes,
 } from '../types/player';
 
 export function usePlayerShortInfo(accountId: number) {
@@ -14,7 +14,7 @@ export function usePlayerShortInfo(accountId: number) {
     data: playerShort,
     error,
     isLoading,
-  } = useSWR<PlayerInfo>(`${apiUrl}/players/${accountId}`, fetcher);
+  } = useSWR<IPlayerInfo>(`${apiUrl}/players/${accountId}`, fetcher);
   return { playerShort, error, isLoading };
 }
 
@@ -23,7 +23,7 @@ export function usePlayerWinrate(accountId: number) {
     data: playerWinRate,
     error,
     isLoading,
-  } = useSWR<PlayerWinrate>(`${apiUrl}/players/${accountId}/wl`, fetcher);
+  } = useSWR<IPlayerWinrate>(`${apiUrl}/players/${accountId}/wl`, fetcher);
   return { playerWinRate, error, isLoading };
 }
 
@@ -32,7 +32,7 @@ export function usePlayerHeroes(accountId: number) {
     data: heroes,
     error,
     isLoading,
-  } = useSWR<PlayerHeroes>(`${apiUrl}players/${accountId}/heroes`, fetcher);
+  } = useSWR<IPlayerHeroes>(`${apiUrl}players/${accountId}/heroes`, fetcher);
   return { heroes, error, isLoading };
 }
 
@@ -41,7 +41,7 @@ export function usePlayerRecentMatches(accountId: number) {
     data: recentMatches,
     error,
     isLoading,
-  } = useSWR<PlayerMatch[]>(`${apiUrl}/players/${accountId}/recentMatches`, fetcher);
+  } = useSWR<IPlayerMatch[]>(`${apiUrl}/players/${accountId}/recentMatches`, fetcher);
   return { recentMatches, error, isLoading };
 }
 
@@ -50,7 +50,7 @@ export function usePlayerTeammates(accountId: number) {
     data: teammates,
     error,
     isLoading,
-  } = useSWR<PlayerTeammate>(`${apiUrl}/players/${accountId}/peers`, fetcher);
+  } = useSWR<IPlayerTeammate>(`${apiUrl}/players/${accountId}/peers`, fetcher);
   return { teammates, error, isLoading };
 }
 

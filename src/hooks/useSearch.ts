@@ -1,13 +1,17 @@
 import useSWR from 'swr';
-
-import { apiUrl, fetcher } from '../helpers/api';
-import { SearchResult } from '../types/search';
+import { fetcher, apiUrl } from '../helpers/api';
+import { ISearchResult } from '../types/search';
 
 export default function useNameSearch(name: string) {
   const {
     data: users,
     error,
     isLoading,
-  } = useSWR<SearchResult>(`${apiUrl}/search/?q=${name}`, fetcher);
+  } = useSWR<ISearchResult[]>(name ? `${apiUrl}/search/?q=${name}` : null, fetcher, {
+    revalidateOnMount: true,
+    revalidateOnFocus: false,
+    refreshInterval: 24 * 60 * 60 * 1000,
+  });
+
   return { users, error, isLoading };
 }

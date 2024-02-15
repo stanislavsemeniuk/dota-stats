@@ -1,4 +1,4 @@
-export interface SearchResult {
+export interface ISearchResult {
   account_id: number;
   avatarfull: string;
   personaname: string;

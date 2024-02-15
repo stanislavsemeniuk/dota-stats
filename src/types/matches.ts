@@ -1,13 +1,13 @@
-export interface MatchFullInfo {
+export interface IMatchFullInfo {
   match_id: number;
-  players: MatchPlayer[];
+  players: IMatchPlayer[];
   radiant_win: boolean;
   duration: number;
   radiant_score: number;
   dire_score: number;
 }
 
-interface MatchPlayer {
+interface IMatchPlayer {
   account_id: number;
   personaname: string;
   player_slot: number;

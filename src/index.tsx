@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Players />,
       },
       {
-        path: 'players/:playerID',
+        path: 'players/:playerId',
         element: <Player />,
         children: [
           {
