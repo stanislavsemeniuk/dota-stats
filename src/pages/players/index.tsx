@@ -2,7 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'react-router-dom';
 
-import { Input, Button, SearchResult } from '../../components';
+import { Input, Button } from '../../components';
+import { SearchResult } from './search-result';
 import useNameSearch from '../../hooks/useSearch';
 
 import styles from './players.module.css';

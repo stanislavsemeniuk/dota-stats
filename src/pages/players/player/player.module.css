@@ -74,3 +74,40 @@
 .sectionTitle {
   font-size: 18px;
 }
+
+.tableWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 32px 0;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.5fr 0.5fr 0.5fr;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tableElement {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.5fr 0.5fr 0.5fr;
+  align-items: center;
+  gap: 16px;
+  background: var(--additional-bg-first);
+  transition: 0.3s;
+}
+
+a.tableElement:hover {
+  background: var(--additional-bg-second);
+}
+
+.tableAvatar {
+  display: flex;
+}
+
+.tableAvatar img {
+  width: 100%;
+}

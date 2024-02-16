@@ -1,12 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import styles from './header.module.css';
 
 function Header() {
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>Dota Stats</h1>
+      <Link to="/" className={styles.title}>
+        Dota Stats
+      </Link>
       <div className={styles.navbar}>
         <NavLink className={({ isActive }) => (isActive ? styles.active : '')} to="/players">
           Players

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ISearchResult } from '../../types/search';
+import { ISearchResult } from '../../../types/search';
+import { formatDate } from '../../../helpers/calculations';
 
 import styles from './search-result.module.css';
 
@@ -12,11 +13,7 @@ function SearchResult({
   last_match_time,
   similarity,
 }: ISearchResult) {
-  const formattedLastMatchDate = new Date(last_match_time).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const formattedLastMatchDate = formatDate(last_match_time);
   return (
     <Link to={`/players/${account_id}`} className={styles.resultBlock}>
       <div className={styles.avatar}>

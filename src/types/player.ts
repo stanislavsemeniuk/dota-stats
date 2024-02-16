@@ -42,7 +42,7 @@ export interface IPlayerTeammate {
   with_games: number;
   with_win: number;
   personaname: string;
-  avatar: string;
+  avatarfull: string;
 }
 
 export interface IPlayerTotal {
@@ -61,7 +61,6 @@ export interface IPlayerTotal {
 
 export interface IPlayerHero {
   hero_id: number;
-  last_played: number;
   games: number;
   win: number;
 }
