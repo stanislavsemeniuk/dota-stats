@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import { usePlayerTeammates } from '../../../../hooks/usePlayer';
 import { Teammate } from '../components/teammate';
@@ -9,15 +10,28 @@ import styles from '../player.module.css';
 function PlayerTeammates() {
   const { playerId } = useParams();
   const { teammates } = usePlayerTeammates(Number(playerId));
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  function handleSort(sortValue: string) {
+    if (searchParams.get('sort') === sortValue) setSearchParams({});
+    else setSearchParams({ sort: sortValue });
+  }
+
   return (
     <div>
       <div className={styles.tableWrapper}>
         <div className={styles.tableHeader}>
           <div></div>
           <div>Name</div>
-          <div>Games together</div>
-          <div>Wins together</div>
-          <div>Win rate</div>
+          <div className={styles.sortButton} onClick={() => handleSort('games')}>
+            Games together
+          </div>
+          <div className={styles.sortButton} onClick={() => handleSort('wins')}>
+            Wins together
+          </div>
+          <div className={styles.sortButton} onClick={() => handleSort('winRate')}>
+            Win rate
+          </div>
         </div>
         {teammates &&
           teammates.map(({ account_id, avatarfull, personaname, with_games, with_win }, index) => (

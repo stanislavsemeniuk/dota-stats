@@ -32,7 +32,11 @@ export function usePlayerHeroes(accountId: number) {
     data: heroes,
     error,
     isLoading,
-  } = useSWR<IPlayerHero[]>(`${apiUrl}/players/${accountId}/heroes`, fetcher, revalidateProperties);
+  } = useSWR<IPlayerHero[]>(
+    `${apiUrl}/players/${accountId}/heroes?having=1`,
+    fetcher,
+    revalidateProperties,
+  );
   return { heroes, error, isLoading };
 }
 

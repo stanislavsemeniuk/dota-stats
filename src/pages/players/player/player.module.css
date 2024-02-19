@@ -106,8 +106,41 @@ a.tableElement:hover {
 
 .tableAvatar {
   display: flex;
+  max-width: 100px;
 }
 
 .tableAvatar img {
   width: 100%;
+}
+
+.sortButton {
+  cursor: pointer;
+}
+
+.flexColumn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabelFirstTextColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.totals {
+  display: flex;
+  margin: 16px 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.totalsElement {
+  display: flex;
+  gap: 8px;
+}
+
+.totalsLabel {
+  font-weight: 700;
 }

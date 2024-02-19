@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 import { usePlayerHeroes } from '../../../../hooks/usePlayer';
 import { PlayerHero } from '../components/player-hero';
@@ -9,6 +10,12 @@ import styles from '../player.module.css';
 function PlayerHeroes() {
   const { playerId } = useParams();
   const { heroes } = usePlayerHeroes(Number(playerId));
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  function handleSort(sortValue: string) {
+    if (searchParams.get('sort') === sortValue) setSearchParams({});
+    else setSearchParams({ sort: sortValue });
+  }
 
   return (
     <div>
@@ -16,9 +23,15 @@ function PlayerHeroes() {
         <div className={styles.tableHeader}>
           <div></div>
           <div>Name</div>
-          <div>Games</div>
-          <div>Wins</div>
-          <div>Winrate</div>
+          <div className={styles.sortButton} onClick={() => handleSort('games')}>
+            Games
+          </div>
+          <div className={styles.sortButton} onClick={() => handleSort('wins')}>
+            Wins
+          </div>
+          <div className={styles.sortButton} onClick={() => handleSort('winRate')}>
+            Winrate
+          </div>
         </div>
         {heroes &&
           heroes.length > 1 &&
