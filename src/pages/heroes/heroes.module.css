@@ -1,0 +1,70 @@
+.heroesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 32px 0;
+}
+
+.heroesElement,
+.heroesHeader {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr 0.3fr;
+  align-items: center;
+}
+
+.heroesHeader {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.heroesElement {
+  background: var(--additional-bg-first);
+  transition: 0.3s;
+}
+
+a.heroesElement:hover {
+  background: var(--additional-bg-second);
+}
+
+.heroesName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  display: flex;
+  max-width: 100px;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.win {
+  color: var(--success-color);
+}
+
+.lose {
+  color: var(--error-color);
+}
+
+.heroHeader {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.heroAvatar {
+  max-width: 250px;
+  display: flex;
+}
+
+.heroAvatar img {
+  width: 100%;
+}
+
+.heroLocalName {
+  font-size: 24px;
+  font-weight: 700;
+}

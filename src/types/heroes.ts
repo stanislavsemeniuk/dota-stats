@@ -17,3 +17,14 @@ export interface IHeroMatchup {
   games_played: number;
   wins: number;
 }
+
+interface GameItems {
+  [itemId: string]: number;
+}
+
+export interface IHeroItems {
+  start_game_items: GameItems;
+  early_game_items: GameItems;
+  mid_game_items: GameItems;
+  late_game_items: GameItems;
+}

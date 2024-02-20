@@ -2,7 +2,7 @@ import React from 'react';
 
 import { IPlayerHero } from '../../../../../types/player';
 import { assetsUrl } from '../../../../../helpers/assets';
-import { findHeroInfo } from '../../../../../helpers/static';
+import { findHeroInfo } from '../../../../../static/heroes';
 import { countWinRate } from '../../../../../helpers/calculations';
 
 import styles from '../../player.module.css';

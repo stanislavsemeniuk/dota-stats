@@ -12,6 +12,7 @@ import {
   PlayerHeroes,
   Hero,
   ErrorPage,
+  Match,
 } from './pages';
 
 import './index.css';
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: 'heroes/:heroId',
         element: <Hero />,
+      },
+      {
+        path: 'matches/:matchId',
+        element: <Match />,
       },
     ],
   },

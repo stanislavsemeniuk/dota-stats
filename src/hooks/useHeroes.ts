@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 
 import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
-import { IHero, IHeroMatchup } from '../types/heroes';
+import { IHero, IHeroMatchup, IHeroItems } from '../types/heroes';
 
 export function useHeroes() {
   const {
@@ -19,4 +19,17 @@ export function useHeroMatchup(heroId: number) {
     isLoading,
   } = useSWR<IHeroMatchup[]>(`${apiUrl}/heroes/${heroId}/matchups`, fetcher, revalidateProperties);
   return { matchups, error, isLoading };
+}
+
+export function useHeroItems(heroId: number) {
+  const {
+    data: items,
+    error,
+    isLoading,
+  } = useSWR<IHeroItems[]>(
+    `${apiUrl}/heroes/${heroId}/itemPopularity`,
+    fetcher,
+    revalidateProperties,
+  );
+  return { items, error, isLoading };
 }

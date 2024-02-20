@@ -6,3 +6,4 @@ export * from './players/player/teammates';
 export * from './heroes';
 export * from './heroes/hero';
 export * from './error';
+export * from './matches/match';

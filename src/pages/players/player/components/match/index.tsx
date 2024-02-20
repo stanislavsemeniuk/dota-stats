@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { assetsUrl } from '../../../../../helpers/assets';
-import { findHeroInfo, getGameModeName } from '../../../../../helpers/static';
+import { findHeroInfo } from '../../../../../static/heroes';
+import { getGameModeName } from '../../../../../static/game-modes';
 import { convertSecondsToMinutesString } from '../../../../../helpers/calculations';
 import { IPlayerMatch } from '../../../../../types/player';
 
