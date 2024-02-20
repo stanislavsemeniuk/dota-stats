@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.navbar a {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid var(--link-color);
+}
+
+.info {
+  font-size: 16px;
+}
