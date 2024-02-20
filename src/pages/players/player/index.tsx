@@ -6,6 +6,7 @@ import { usePlayerShortInfo, usePlayerWinrate } from '../../../hooks/usePlayer';
 import { countWinRateWithoutTotalGames } from '../../../helpers/calculations';
 
 import styles from './player.module.css';
+import { NavBar } from '../../../components';
 
 function Player() {
   const { playerId } = useParams();
@@ -33,17 +34,13 @@ function Player() {
         </div>
         <div className={styles.rank}>{playerShortInfo?.rank_tier}</div>
       </div>
-      <div className={styles.navbar}>
-        <NavLink className={({ isActive }) => (isActive ? styles.active : '')} to="" end>
-          Overview
-        </NavLink>
-        <NavLink className={({ isActive }) => (isActive ? styles.active : '')} to="heroes">
-          Heroes
-        </NavLink>
-        <NavLink className={({ isActive }) => (isActive ? styles.active : '')} to="teammates">
-          Teammates
-        </NavLink>
-      </div>
+      <NavBar
+        links={[
+          { href: '', text: 'Overview' },
+          { href: 'heroes', text: 'Heroes' },
+          { href: 'teammates', text: 'Teammates' },
+        ]}
+      />
       <Outlet />
     </div>
   );

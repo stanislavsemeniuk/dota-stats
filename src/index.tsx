@@ -11,6 +11,8 @@ import {
   PlayerTeammates,
   PlayerHeroes,
   Hero,
+  HeroItems,
+  HeroMatchups,
   ErrorPage,
   Match,
 } from './pages';
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: 'heroes/:heroId',
         element: <Hero />,
+        children: [
+          { path: '', element: <HeroMatchups /> },
+          { path: 'items', element: <HeroItems /> },
+        ],
       },
       {
         path: 'matches/:matchId',

@@ -18,7 +18,7 @@ export interface IHeroMatchup {
   wins: number;
 }
 
-interface GameItems {
+export interface GameItems {
   [itemId: string]: number;
 }
 

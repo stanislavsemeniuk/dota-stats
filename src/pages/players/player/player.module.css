@@ -50,27 +50,6 @@
   font-size: 18px;
 }
 
-.navbar {
-  margin: 16px 0;
-  display: flex;
-  border-radius: 8px;
-  overflow: hidden;
-  width: fit-content;
-}
-
-.navbar a {
-  padding: 12px 24px;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  background: var(--additional-bg-second);
-}
-
-.navbar a.active {
-  background: var(--link-color);
-}
-
 .sectionTitle {
   font-size: 18px;
 }

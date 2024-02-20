@@ -26,7 +26,7 @@ export function useHeroItems(heroId: number) {
     data: items,
     error,
     isLoading,
-  } = useSWR<IHeroItems[]>(
+  } = useSWR<IHeroItems>(
     `${apiUrl}/heroes/${heroId}/itemPopularity`,
     fetcher,
     revalidateProperties,

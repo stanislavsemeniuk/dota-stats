@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { Outlet, useParams } from 'react-router-dom';
 
 import { findHeroInfo } from '../../../static/heroes';
-import { findItemsInfo } from '../../../static/items';
 import { assetsUrl } from '../../../helpers/assets';
-import { useHeroItems, useHeroMatchup } from '../../../hooks/useHeroes';
 
 import styles from '../heroes.module.css';
+import { NavBar } from '../../../components';
 
 function Hero() {
   const { heroId } = useParams();
-  const { items } = useHeroItems(Number(heroId));
-  const { matchups } = useHeroMatchup(Number(heroId));
   const hero = findHeroInfo(Number(heroId));
   return (
     <div>
@@ -35,6 +32,13 @@ function Hero() {
           </div>
         </div>
       </div>
+      <NavBar
+        links={[
+          { href: '', text: 'Matchups' },
+          { href: 'items', text: 'Items' },
+        ]}
+      />
+      <Outlet />
     </div>
   );
 }

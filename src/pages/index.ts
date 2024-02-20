@@ -5,5 +5,7 @@ export * from './players/player/overview';
 export * from './players/player/teammates';
 export * from './heroes';
 export * from './heroes/hero';
+export * from './heroes/hero/items';
+export * from './heroes/hero/matchups';
 export * from './error';
 export * from './matches/match';

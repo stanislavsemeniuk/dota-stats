@@ -68,3 +68,45 @@ a.heroesElement:hover {
   font-size: 24px;
   font-weight: 700;
 }
+
+.heroItemBuilds {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.heroItemBuild {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroBuildTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.heroBuildItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  width: 75px;
+}
+
+.itemImage {
+  width: 100%;
+}
+
+.itemAmount {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 12px;
+  background: #fff;
+  color: #000;
+}
