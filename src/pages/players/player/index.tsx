@@ -13,6 +13,10 @@ function Player() {
   const { playerShortInfo } = usePlayerShortInfo(Number(playerId));
   const { playerWinRate } = usePlayerWinrate(Number(playerId));
 
+  if (!playerWinRate || !playerShortInfo) {
+    return null;
+  }
+
   return (
     <div>
       <div className={styles.header}>
@@ -27,8 +31,7 @@ function Player() {
               <span className={styles.lose}>{playerWinRate?.lose}</span>
             </div>
             <div className={styles.winRatePercents}>
-              {playerWinRate &&
-                countWinRateWithoutTotalGames(playerWinRate.win, playerWinRate.lose) + '%'}
+              {countWinRateWithoutTotalGames(playerWinRate.win, playerWinRate.lose) + '%'}
             </div>
           </div>
         </div>

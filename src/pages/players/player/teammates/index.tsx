@@ -12,6 +12,10 @@ function PlayerTeammates() {
   const { teammates } = usePlayerTeammates(Number(playerId));
   const [searchParams, setSearchParams] = useSearchParams();
 
+  if (!teammates) {
+    return null;
+  }
+
   function handleSort(sortValue: string) {
     if (searchParams.get('sort') === sortValue) setSearchParams({});
     else setSearchParams({ sort: sortValue });
@@ -33,17 +37,16 @@ function PlayerTeammates() {
             Win rate
           </div>
         </div>
-        {teammates &&
-          teammates.map(({ account_id, avatarfull, personaname, with_games, with_win }, index) => (
-            <Teammate
-              key={index}
-              account_id={account_id}
-              avatarfull={avatarfull}
-              personaname={personaname}
-              with_games={with_games}
-              with_win={with_win}
-            />
-          ))}
+        {teammates.map(({ account_id, avatarfull, personaname, with_games, with_win }, index) => (
+          <Teammate
+            key={index}
+            account_id={account_id}
+            avatarfull={avatarfull}
+            personaname={personaname}
+            with_games={with_games}
+            with_win={with_win}
+          />
+        ))}
       </div>
     </div>
   );

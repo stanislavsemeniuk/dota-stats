@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom';
 
 function Heroes() {
   const { heroesStats } = useHeroes();
+  if (!heroesStats) {
+    return null;
+  }
   return (
     <div>
       <h2>Winrates</h2>
@@ -19,20 +22,19 @@ function Heroes() {
           <div>Current</div>
           <div>Change</div>
         </div>
-        {heroesStats &&
-          heroesStats.map(({ img, localized_name, pub_pick_trend, pub_win_trend, id }, index) => (
-            <HeroWinrateRow
-              img={img}
-              localized_name={localized_name}
-              key={index}
-              heroId={id}
-              start={countWinRate(pub_win_trend[0], pub_pick_trend[0])}
-              current={countWinRate(
-                pub_win_trend[pub_win_trend.length - 1],
-                pub_pick_trend[pub_pick_trend.length - 1],
-              )}
-            />
-          ))}
+        {heroesStats.map(({ img, localized_name, pub_pick_trend, pub_win_trend, id }, index) => (
+          <HeroWinrateRow
+            img={img}
+            localized_name={localized_name}
+            key={index}
+            heroId={id}
+            start={countWinRate(pub_win_trend[0], pub_pick_trend[0])}
+            current={countWinRate(
+              pub_win_trend[pub_win_trend.length - 1],
+              pub_pick_trend[pub_pick_trend.length - 1],
+            )}
+          />
+        ))}
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ function Players() {
           label="Player nickname"
           {...register('nickname', { required: 'Nickname field is required' })}
         />
-        <Button type="submit" disabled={isSubmitting && isLoading}>
+        <Button type="submit" disabled={isSubmitting || isLoading}>
           Search
         </Button>
       </form>

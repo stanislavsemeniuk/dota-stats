@@ -12,6 +12,10 @@ function PlayerHeroes() {
   const { heroes } = usePlayerHeroes(Number(playerId));
   const [searchParams, setSearchParams] = useSearchParams();
 
+  if (!heroes) {
+    return null;
+  }
+
   function handleSort(sortValue: string) {
     if (searchParams.get('sort') === sortValue) setSearchParams({});
     else setSearchParams({ sort: sortValue });
@@ -33,11 +37,9 @@ function PlayerHeroes() {
             Winrate
           </div>
         </div>
-        {heroes &&
-          heroes.length > 1 &&
-          heroes.map(({ hero_id, games, win }, index) => (
-            <PlayerHero key={index} hero_id={hero_id} games={games} win={win} />
-          ))}
+        {heroes.map(({ hero_id, games, win }, index) => (
+          <PlayerHero key={index} hero_id={hero_id} games={games} win={win} />
+        ))}
       </div>
     </div>
   );
