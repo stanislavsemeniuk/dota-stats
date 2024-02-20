@@ -11,30 +11,35 @@ import styles from '../../heroes.module.css';
 function HeroItems() {
   const { heroId } = useParams();
   const { items } = useHeroItems(Number(heroId));
+
+  if (!items) {
+    return null;
+  }
+
   return (
     <div className={styles.heroItemBuilds}>
       <div className={styles.heroItemBuild}>
         <div className={styles.heroBuildTitle}>Start game items</div>
         <div className={styles.heroBuildItems}>
-          {items?.start_game_items && <HeroBuildItems gameItems={items?.start_game_items} />}
+          <HeroBuildItems gameItems={items?.start_game_items} />
         </div>
       </div>
       <div className={styles.heroItemBuild}>
         <div className={styles.heroBuildTitle}>Early game items</div>
         <div className={styles.heroBuildItems}>
-          {items?.early_game_items && <HeroBuildItems gameItems={items?.early_game_items} />}
+          <HeroBuildItems gameItems={items?.early_game_items} />
         </div>
       </div>
       <div className={styles.heroItemBuild}>
         <div className={styles.heroBuildTitle}>Mid game items</div>
         <div className={styles.heroBuildItems}>
-          {items?.mid_game_items && <HeroBuildItems gameItems={items?.mid_game_items} />}
+          <HeroBuildItems gameItems={items?.mid_game_items} />
         </div>
       </div>
       <div className={styles.heroItemBuild}>
         <div className={styles.heroBuildTitle}>Late game items</div>
         <div className={styles.heroBuildItems}>
-          {items?.late_game_items && <HeroBuildItems gameItems={items?.late_game_items} />}
+          <HeroBuildItems gameItems={items?.late_game_items} />
         </div>
       </div>
     </div>
@@ -44,12 +49,11 @@ function HeroItems() {
 function HeroBuildItems({ gameItems }: { gameItems: GameItems }) {
   return (
     <>
-      {gameItems &&
-        Object.entries(gameItems)
-          .filter(([key, amount]) => Number(amount) > 1)
-          .map(([key, amount]) => (
-            <HeroItem key={key} img={`${assetsUrl}${findItemsInfo(key).img}`} amount={amount} />
-          ))}
+      {Object.entries(gameItems)
+        .filter(([key, amount]) => Number(amount) > 1)
+        .map(([key, amount]) => (
+          <HeroItem key={key} img={`${assetsUrl}${findItemsInfo(key).img}`} amount={amount} />
+        ))}
     </>
   );
 }
