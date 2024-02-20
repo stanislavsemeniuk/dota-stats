@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 function PlayerHero({ hero_id, games, win }: IPlayerHero) {
   const hero = findHeroInfo(hero_id);
   return (
-    <Link to={`/heroes/${hero_id}`} className={styles.tableElement}>
+    <Link to={`${hero_id}`} className={styles.tableElement}>
       <div className={styles.tableAvatar}>
         <img src={`${assetsUrl}${hero?.img}` || ''} alt="Hero" />
       </div>

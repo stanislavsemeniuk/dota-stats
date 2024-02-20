@@ -66,6 +66,19 @@ export function usePlayerTeammates(accountId: number) {
   return { teammates, error, isLoading };
 }
 
+export function usePlayerHeroMatches(accountId: number, hero_id: number) {
+  const {
+    data: heroMatches,
+    error,
+    isLoading,
+  } = useSWR<IPlayerMatch[]>(
+    `${apiUrl}/players/${accountId}/matches?hero_id=${hero_id}`,
+    fetcher,
+    revalidateProperties,
+  );
+  return { heroMatches, error, isLoading };
+}
+
 export function usePlayerMatches(accountId: number) {
   //TODO: Create pagination and limit
 }
