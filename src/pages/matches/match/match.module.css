@@ -1,0 +1,74 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.victorySide {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.radiant {
+  color: var(--success-color);
+}
+
+.dire {
+  color: var(--error-color);
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 21px;
+}
+
+.duration {
+  font-size: 12px;
+}
+
+.team {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.players {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playersHeader,
+.player {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 0.5fr 0.75fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1.25fr;
+  gap: 8px;
+}
+
+.playersHeader {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.player {
+  background: var(--additional-bg-first);
+  transition: 0.3s;
+}
+
+a.player:hover {
+  background: var(--additional-bg-second);
+}
+
+.heroAvatar {
+  display: flex;
+  max-width: 100px;
+}
+
+.heroAvatar img {
+  width: 100%;
+}

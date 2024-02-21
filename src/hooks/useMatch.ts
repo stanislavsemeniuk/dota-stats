@@ -8,6 +8,6 @@ export default function useMatchInfo(matchId: number) {
     data: matchInfo,
     error,
     isLoading,
-  } = useSWR<IMatchFullInfo>(`${apiUrl}matches/${matchId}`, fetcher, revalidateProperties);
+  } = useSWR<IMatchFullInfo>(`${apiUrl}/matches/${matchId}`, fetcher, revalidateProperties);
   return { matchInfo, error, isLoading };
 }

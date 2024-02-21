@@ -7,8 +7,8 @@ export interface IMatchFullInfo {
   dire_score: number;
 }
 
-interface IMatchPlayer {
-  account_id: number;
+export interface IMatchPlayer {
+  account_id: number | undefined;
   personaname: string;
   player_slot: number;
   team_number: number;

@@ -23,7 +23,8 @@
   border-bottom: 2px solid transparent;
 }
 
-.navbar a.active {
+.navbar a.active,
+.navbar a:hover {
   border-bottom: 2px solid var(--link-color);
 }
 
