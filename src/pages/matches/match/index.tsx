@@ -158,11 +158,13 @@ function MatchPlayer({
       <div className={styles.heroAvatar}>
         <img src={`${assetsUrl}${hero.img}`} alt="Hero" />
       </div>
-      <div>{accountId && playerShortInfo ? playerShortInfo.profile.personaname : 'Anonymous'}</div>
+      <div>
+        {accountId && playerShortInfo ? playerShortInfo.profile.personaname : <i>Hidden profile</i>}
+      </div>
       <div>
         {kills} / {deaths} / {assists}
       </div>
-      <div>{net_worth}</div>
+      <div className={styles.netWorth}>{net_worth}</div>
       <div>
         {last_hits} / {denies}
       </div>
@@ -194,7 +196,7 @@ function MatchPlayer({
 function PlayerItem({ itemId }: { itemId: number }) {
   const item = findItemsInfo(itemId.toString());
   if (!item) return null;
-  return <img width="50px" src={`${assetsUrl}${item.img}`} alt="item" />;
+  return <img width="30px" src={`${assetsUrl}${item.img}`} alt="item" />;
 }
 
 export { Match };

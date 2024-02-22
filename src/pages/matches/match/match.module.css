@@ -46,7 +46,7 @@
 .player {
   display: grid;
   align-items: center;
-  grid-template-columns: 0.5fr 0.75fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1.25fr;
+  grid-template-columns: 0.3fr 0.75fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1.25fr;
   gap: 8px;
 }
 
@@ -66,9 +66,13 @@ a.player:hover {
 
 .heroAvatar {
   display: flex;
-  max-width: 100px;
+  max-width: 60px;
 }
 
 .heroAvatar img {
   width: 100%;
+}
+
+.netWorth {
+  color: #fbb829;
 }
