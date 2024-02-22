@@ -66,9 +66,45 @@ a.heroesElement:hover {
   width: 100%;
 }
 
+.heroMain,
+.heroAdditional {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .heroLocalName {
   font-size: 24px;
   font-weight: 700;
+}
+
+.heroIcon {
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.attribute {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+}
+
+.attribute img {
+  width: 100%;
+}
+
+.heroAdditionalElement {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.heroAdditionalContent {
+  font-style: italic;
+  font-size: 16px;
 }
 
 .heroItemBuilds {

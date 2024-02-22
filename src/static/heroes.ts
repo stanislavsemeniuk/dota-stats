@@ -5,7 +5,7 @@ export function findHeroInfo(hero_id: number) {
 const heroesStaticData: {
   id: number;
   name: string;
-  primary_attr: string;
+  primary_attr: 'agi' | 'str' | 'int' | 'all';
   attack_type: string;
   roles: string[];
   img: string;
