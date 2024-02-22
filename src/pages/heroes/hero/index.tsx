@@ -44,7 +44,7 @@ function Hero() {
       </div>
       <NavBar
         links={[
-          { href: '', text: 'Best players' },
+          { href: '', text: 'Players' },
           { href: 'items', text: 'Items' },
           { href: 'matchups', text: 'Matchups' },
         ]}

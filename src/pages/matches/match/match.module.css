@@ -76,3 +76,34 @@ a.player:hover {
 .netWorth {
   color: #fbb829;
 }
+
+@media (max-width: 768px) {
+  .players {
+    margin: 8px 0;
+  }
+
+  .playersHeader {
+    display: none;
+  }
+
+  .player {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .playersHeader {
+    font-size: 12px;
+  }
+
+  .player {
+    font-size: 10px;
+  }
+
+  .playerName {
+    font-size: 8px;
+  }
+
+  .mobileHide {
+    display: none;
+  }
+}

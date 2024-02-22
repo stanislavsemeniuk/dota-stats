@@ -158,23 +158,23 @@ function MatchPlayer({
       <div className={styles.heroAvatar}>
         <img src={`${assetsUrl}${hero.img}`} alt="Hero" />
       </div>
-      <div>
+      <div className={styles.playerName}>
         {accountId && playerShortInfo ? playerShortInfo.profile.personaname : <i>Hidden profile</i>}
       </div>
       <div>
         {kills} / {deaths} / {assists}
       </div>
       <div className={styles.netWorth}>{net_worth}</div>
-      <div>
+      <div className={styles.mobileHide}>
         {last_hits} / {denies}
       </div>
-      <div>
+      <div className={styles.mobileHide}>
         {gpm} / {xpm}
       </div>
-      <div>
+      <div className={styles.mobileHide}>
         {damage} / {towerDamage}
       </div>
-      <div>
+      <div className={styles.mobileHide}>
         {items.map((itemId, index) => (
           <PlayerItem key={index} itemId={itemId} />
         ))}

@@ -34,3 +34,19 @@ a.link:hover {
   font-style: italic;
   color: #ffffff99;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 18px;
+    margin: 16px 0;
+  }
+  .paragraph {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .author {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+}

@@ -154,6 +154,7 @@ a.heroesElement:hover {
   display: grid;
   grid-template-columns: 0.1fr 1fr 0.3fr 0.3fr;
   align-items: center;
+  gap: 16px;
 }
 
 .position {
@@ -168,4 +169,33 @@ a.heroesElement:hover {
 
 .rank img {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .heroesHeader {
+    font-size: 12px;
+  }
+
+  .heroesElement {
+    font-size: 10px;
+  }
+
+  .avatar {
+    max-width: 50px;
+  }
+
+  .heroAvatar {
+    min-width: 100px;
+  }
+
+  .heroAdditional {
+    display: none;
+  }
+
+  .item {
+    width: 50px;
+  }
+  .itemAmount {
+    font-size: 8px;
+  }
 }

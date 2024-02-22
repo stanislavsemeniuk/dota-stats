@@ -28,13 +28,13 @@ function PlayerTeammates() {
           <div></div>
           <div>Name</div>
           <div className={styles.sortButton} onClick={() => handleSort('games')}>
-            Games together
+            Games
           </div>
           <div className={styles.sortButton} onClick={() => handleSort('wins')}>
-            Wins together
+            Wins
           </div>
           <div className={styles.sortButton} onClick={() => handleSort('winRate')}>
-            Win rate
+            Winrate
           </div>
         </div>
         {teammates.map(({ account_id, avatarfull, personaname, with_games, with_win }, index) => (

@@ -113,6 +113,7 @@ a.tableElement:hover {
 
 .tabelFirstTextColumn {
   display: flex;
+  padding: 4px;
   align-items: center;
   justify-content: center;
 }
@@ -131,4 +132,38 @@ a.tableElement:hover {
 
 .totalsLabel {
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 21px;
+  }
+  .winRate,
+  .winRatePercents {
+    font-size: 14px;
+  }
+  .rank {
+    max-width: 75px;
+  }
+  .tableAvatar {
+    max-width: 50px;
+  }
+
+  .tableWrapper {
+    gap: 4px;
+  }
+
+  .tableHeader {
+    font-size: 12px;
+  }
+
+  .tableElement {
+    font-size: 10px;
+    grid-template-columns: 0.3fr 1fr 0.5fr 0.5fr 0.5fr;
+    gap: 4px;
+  }
+
+  .tableName {
+    font-size: 6px;
+  }
 }

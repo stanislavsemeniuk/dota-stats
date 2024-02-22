@@ -35,7 +35,7 @@ export default function PlayerMatch({
         <div className={styles.tableAvatar}>
           <img src={`${assetsUrl}${hero?.img}` || ''} alt="Hero" />
         </div>
-        {hero?.localized_name}
+        <span className={styles.tableName}>{hero?.localized_name}</span>
       </div>
       <div>
         {kills} / {deaths} / {assists}
