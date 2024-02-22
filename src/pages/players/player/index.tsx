@@ -1,9 +1,10 @@
 import React from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 import { usePlayerShortInfo, usePlayerWinrate } from '../../../hooks/usePlayer';
 import { countWinRateWithoutTotalGames } from '../../../helpers/calculations';
+import { ranks } from '../../../helpers/assets';
 
 import styles from './player.module.css';
 import { NavBar } from '../../../components';
@@ -35,7 +36,9 @@ function Player() {
             </div>
           </div>
         </div>
-        <div className={styles.rank}>{playerShortInfo?.rank_tier}</div>
+        <div className={styles.rank}>
+          <img src={ranks[playerShortInfo.rank_tier.toString()]} alt="Rank" />
+        </div>
       </div>
       <NavBar
         links={[

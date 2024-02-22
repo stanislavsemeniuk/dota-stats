@@ -160,3 +160,12 @@ a.heroesElement:hover {
   display: flex;
   justify-content: center;
 }
+
+.rank {
+  display: flex;
+  max-width: 50px;
+}
+
+.rank img {
+  width: 100%;
+}

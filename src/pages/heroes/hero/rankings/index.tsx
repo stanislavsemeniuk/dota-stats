@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import { useHeroBestPlayers } from '../../../../hooks/useHeroes';
+import { ranks } from '../../../../helpers/assets';
 
 import styles from '../../heroes.module.css';
 
@@ -67,7 +68,9 @@ function BestHeroPlayer({
         {name}
       </div>
       <div>{score.toFixed(2)}</div>
-      <div>{rank_tier}</div>
+      <div className={styles.rank}>
+        <img src={ranks[rank_tier.toString()]} alt="Rank" />
+      </div>
     </Link>
   );
 }

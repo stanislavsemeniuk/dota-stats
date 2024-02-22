@@ -1,5 +1,5 @@
 export interface IPlayerInfo {
-  rank_tier: number | null;
+  rank_tier: number;
   leaderboard_rank: number | null;
   profile: {
     account_id: number;
