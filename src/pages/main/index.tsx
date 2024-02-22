@@ -30,7 +30,11 @@ function Main() {
       </p>
       <p className={styles.author}>
         Created as a pet project by{' '}
-        <a href="https://github.com/stanislavsemeniuk" className={styles.link}>
+        <a
+          href="https://github.com/stanislavsemeniuk"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.link}>
           Stanislav Semeniuk
         </a>
       </p>
