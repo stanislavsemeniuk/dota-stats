@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 
 import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
-import { IHero, IHeroMatchup, IHeroItems } from '../types/heroes';
+import { IHero, IHeroMatchup, IHeroItems, IHeroRankings } from '../types/heroes';
 
 export function useHeroes() {
   const {
@@ -32,4 +32,15 @@ export function useHeroItems(heroId: number) {
     revalidateProperties,
   );
   return { items, error, isLoading };
+}
+
+export function useHeroBestPlayers(hero_id: number) {
+  const { data, error, isLoading } = useSWR<IHeroRankings>(
+    `${apiUrl}/rankings?hero_id=${hero_id}`,
+    fetcher,
+    revalidateProperties,
+  );
+
+  const rankings = data?.rankings.filter((el) => el.name !== null);
+  return { rankings, error, isLoading };
 }

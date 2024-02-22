@@ -8,5 +8,6 @@ export * from './heroes';
 export * from './heroes/hero';
 export * from './heroes/hero/items';
 export * from './heroes/hero/matchups';
+export * from './heroes/hero/rankings';
 export * from './error';
 export * from './matches/match';

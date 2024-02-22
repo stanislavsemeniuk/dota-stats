@@ -28,3 +28,17 @@ export interface IHeroItems {
   mid_game_items: GameItems;
   late_game_items: GameItems;
 }
+
+interface IHeroPlayer {
+  account_id: number;
+  personaname: string;
+  name: string | null;
+  avatar: string;
+  score: number;
+  rank_tier: number;
+}
+
+export interface IHeroRankings {
+  hero_id: number;
+  rankings: IHeroPlayer[];
+}

@@ -13,6 +13,7 @@ import {
   Hero,
   HeroItems,
   HeroMatchups,
+  HeroRankings,
   ErrorPage,
   Match,
   PlayerHeroMatches,
@@ -57,7 +58,8 @@ const router = createBrowserRouter([
         path: 'heroes/:heroId',
         element: <Hero />,
         children: [
-          { path: '', element: <HeroMatchups /> },
+          { path: '', element: <HeroRankings /> },
+          { path: 'matchups', element: <HeroMatchups /> },
           { path: 'items', element: <HeroItems /> },
         ],
       },

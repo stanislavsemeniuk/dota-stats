@@ -17,11 +17,13 @@
   font-weight: 700;
 }
 
+.bestPlayersElement,
 .heroesElement {
   background: var(--additional-bg-first);
   transition: 0.3s;
 }
 
+a.bestPlayersElement:hover,
 a.heroesElement:hover {
   background: var(--additional-bg-second);
 }
@@ -109,4 +111,16 @@ a.heroesElement:hover {
   font-size: 12px;
   background: #fff;
   color: #000;
+}
+
+.bestPlayersElement,
+.bestPlayersHeader {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.3fr 0.3fr;
+  align-items: center;
+}
+
+.position {
+  display: flex;
+  justify-content: center;
 }
