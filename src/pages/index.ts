@@ -11,3 +11,4 @@ export * from './heroes/hero/matchups';
 export * from './heroes/hero/rankings';
 export * from './error';
 export * from './matches/match';
+export * from './main';

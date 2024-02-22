@@ -1,0 +1,36 @@
+.description {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  margin: 32px 0;
+  text-align: center;
+  line-height: 150%;
+}
+
+.paragraph {
+  font-size: 18px;
+  margin: 16px 0;
+  line-height: 150%;
+}
+
+a.link {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+a.link:hover {
+  color: var(--link-color-hover) !important;
+}
+
+.author {
+  font-size: 16px;
+  margin: 32px 0;
+  line-height: 150%;
+  font-style: italic;
+  color: #ffffff99;
+}

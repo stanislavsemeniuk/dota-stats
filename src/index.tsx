@@ -17,6 +17,7 @@ import {
   ErrorPage,
   Match,
   PlayerHeroMatches,
+  Main,
 } from './pages';
 
 import './index.css';
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '',
+        element: <Main />,
+      },
       {
         path: 'players',
         element: <Players />,
