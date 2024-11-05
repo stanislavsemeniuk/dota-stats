@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 
-import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
+import { apiUrl } from '../helpers/api';
 import {
   IPlayerInfo,
   IPlayerWinrate,
@@ -14,7 +14,7 @@ export function usePlayerShortInfo(accountId: number) {
     data: playerShortInfo,
     error,
     isLoading,
-  } = useSWR<IPlayerInfo>(`${apiUrl}/players/${accountId}`, fetcher, revalidateProperties);
+  } = useSWR<IPlayerInfo>(`${apiUrl}/players/${accountId}`);
   return { playerShortInfo, error, isLoading };
 }
 
@@ -23,7 +23,7 @@ export function usePlayerWinrate(accountId: number) {
     data: playerWinRate,
     error,
     isLoading,
-  } = useSWR<IPlayerWinrate>(`${apiUrl}/players/${accountId}/wl`, fetcher, revalidateProperties);
+  } = useSWR<IPlayerWinrate>(`${apiUrl}/players/${accountId}/wl`);
   return { playerWinRate, error, isLoading };
 }
 
@@ -33,9 +33,7 @@ export function usePlayerHeroes(accountId: number) {
     error,
     isLoading,
   } = useSWR<IPlayerHero[]>(
-    `${apiUrl}/players/${accountId}/heroes?having=1`,
-    fetcher,
-    revalidateProperties,
+    `${apiUrl}/players/${accountId}/heroes?having=1`
   );
   return { heroes, error, isLoading };
 }
@@ -46,9 +44,7 @@ export function usePlayerRecentMatches(accountId: number) {
     error,
     isLoading,
   } = useSWR<IPlayerMatch[]>(
-    `${apiUrl}/players/${accountId}/recentMatches`,
-    fetcher,
-    revalidateProperties,
+    `${apiUrl}/players/${accountId}/recentMatches`
   );
   return { recentMatches, error, isLoading };
 }
@@ -59,9 +55,7 @@ export function usePlayerTeammates(accountId: number) {
     error,
     isLoading,
   } = useSWR<IPlayerTeammate[]>(
-    `${apiUrl}/players/${accountId}/peers`,
-    fetcher,
-    revalidateProperties,
+    `${apiUrl}/players/${accountId}/peers`
   );
   return { teammates, error, isLoading };
 }
@@ -72,9 +66,7 @@ export function usePlayerHeroMatches(accountId: number, hero_id: number) {
     error,
     isLoading,
   } = useSWR<IPlayerMatch[]>(
-    `${apiUrl}/players/${accountId}/matches?hero_id=${hero_id}`,
-    fetcher,
-    revalidateProperties,
+    `${apiUrl}/players/${accountId}/matches?hero_id=${hero_id}`
   );
   return { heroMatches, error, isLoading };
 }

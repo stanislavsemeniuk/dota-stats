@@ -6,10 +6,9 @@ import { convertSecondsToMinutesString } from '../../../helpers/calculations';
 import { usePlayerShortInfo } from '../../../hooks/usePlayer';
 
 import styles from './match.module.css';
-import { findHeroInfo } from '../../../static/heroes';
-import { findItemsInfo } from '../../../static/items';
 import { assetsUrl } from '../../../helpers/assets';
 import { IMatchPlayer } from '../../../types/matches';
+import { useConstantsContext } from '../../../context/СonstantsContext';
 
 function Match() {
   const { matchId } = useParams();
@@ -148,6 +147,7 @@ function MatchPlayer({
   towerDamage,
   items,
 }: IMatchPlayerProps) {
+  const {findHeroInfo} = useConstantsContext()
   const hero = findHeroInfo(Number(heroId));
   const { playerShortInfo } = usePlayerShortInfo(Number(accountId));
 
@@ -194,6 +194,7 @@ function MatchPlayer({
 }
 
 function PlayerItem({ itemId }: { itemId: number }) {
+  const {findItemsInfo} = useConstantsContext()
   const item = findItemsInfo(itemId.toString());
   if (!item) return null;
   return <img width="30px" src={`${assetsUrl}${item.img}`} alt="item" />;

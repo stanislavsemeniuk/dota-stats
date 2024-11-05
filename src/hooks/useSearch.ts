@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
+import { apiUrl } from '../helpers/api';
 import { ISearchResult } from '../types/search';
 
 export default function useNameSearch(name: string) {
@@ -8,9 +8,7 @@ export default function useNameSearch(name: string) {
     error,
     isLoading,
   } = useSWR<ISearchResult[]>(
-    name ? `${apiUrl}/search/?q=${name}` : null,
-    fetcher,
-    revalidateProperties,
+    name ? `${apiUrl}/search/?q=${name}` : null
   );
 
   return { users, error, isLoading };

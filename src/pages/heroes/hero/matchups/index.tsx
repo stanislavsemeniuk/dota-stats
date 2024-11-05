@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import { useHeroMatchup } from '../../../../hooks/useHeroes';
-import { findHeroInfo } from '../../../../static/heroes';
 import { assetsUrl } from '../../../../helpers/assets';
 
 import styles from '../../heroes.module.css';
 import { countWinRate } from '../../../../helpers/calculations';
+import { useConstantsContext } from '../../../../context/СonstantsContext';
 
 function HeroMatchups() {
   const { heroId } = useParams();
@@ -32,6 +32,7 @@ function HeroMatchups() {
 }
 
 function HeroMatchUp({ heroId, games, wins }: { heroId: number; games: number; wins: number }) {
+  const {findHeroInfo} = useConstantsContext()
   const hero = findHeroInfo(heroId);
   const winRate = countWinRate(wins, games);
   if (!hero) {

@@ -2,13 +2,14 @@ import React from 'react';
 
 import { IPlayerHero } from '../../../../../types/player';
 import { assetsUrl } from '../../../../../helpers/assets';
-import { findHeroInfo } from '../../../../../static/heroes';
 import { countWinRate } from '../../../../../helpers/calculations';
 
 import styles from '../../player.module.css';
 import { Link } from 'react-router-dom';
+import { useConstantsContext } from '../../../../../context/СonstantsContext';
 
 function PlayerHero({ hero_id, games, win }: IPlayerHero) {
+  const {findHeroInfo} = useConstantsContext()
   const hero = findHeroInfo(hero_id);
   return (
     <Link to={`${hero_id}`} className={styles.tableElement}>

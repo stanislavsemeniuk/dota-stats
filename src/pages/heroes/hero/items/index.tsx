@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useConstantsContext } from '../../../../context/СonstantsContext';
 
-import { findItemsInfo } from '../../../../static/items';
 import { assetsUrl } from '../../../../helpers/assets';
 import { useHeroItems } from '../../../../hooks/useHeroes';
 import { GameItems } from '../../../../types/heroes';
@@ -47,12 +47,13 @@ function HeroItems() {
 }
 
 function HeroBuildItems({ gameItems }: { gameItems: GameItems }) {
+  const {findItemsInfo} = useConstantsContext()
   return (
     <>
       {Object.entries(gameItems)
         .filter(([key, amount]) => Number(amount) > 1)
         .map(([key, amount]) => (
-          <HeroItem key={key} img={`${assetsUrl}${findItemsInfo(key).img}`} amount={amount} />
+          <HeroItem key={key} img={`${assetsUrl}${findItemsInfo(key)?.img}`} amount={amount} />
         ))}
     </>
   );

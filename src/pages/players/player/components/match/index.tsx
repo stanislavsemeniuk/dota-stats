@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useConstantsContext } from '../../../../../context/СonstantsContext';
 
 import { assetsUrl } from '../../../../../helpers/assets';
-import { findHeroInfo } from '../../../../../static/heroes';
-import { getGameModeName } from '../../../../../static/game-modes';
 import { convertSecondsToMinutesString } from '../../../../../helpers/calculations';
 import { IPlayerMatch } from '../../../../../types/player';
 
@@ -21,6 +20,7 @@ export default function PlayerMatch({
   player_slot,
 }: IPlayerMatch) {
   const isWin = player_slot < 5 ? radiant_win : !radiant_win;
+  const {findHeroInfo, getGameModeName} = useConstantsContext();
   const hero = findHeroInfo(hero_id);
   return (
     <Link to={`/matches/${match_id}`} className={styles.tableElement}>

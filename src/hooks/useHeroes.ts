@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 
-import { fetcher, apiUrl, revalidateProperties } from '../helpers/api';
+import { apiUrl } from '../helpers/api';
 import { IHero, IHeroMatchup, IHeroItems, IHeroRankings } from '../types/heroes';
 
 export function useHeroes() {
@@ -8,7 +8,7 @@ export function useHeroes() {
     data: heroesStats,
     error,
     isLoading,
-  } = useSWR<IHero[]>(`${apiUrl}/heroStats`, fetcher, revalidateProperties);
+  } = useSWR<IHero[]>(`${apiUrl}/heroStats`);
   return { heroesStats, error, isLoading };
 }
 
@@ -17,7 +17,7 @@ export function useHeroMatchup(heroId: number) {
     data: matchups,
     error,
     isLoading,
-  } = useSWR<IHeroMatchup[]>(`${apiUrl}/heroes/${heroId}/matchups`, fetcher, revalidateProperties);
+  } = useSWR<IHeroMatchup[]>(`${apiUrl}/heroes/${heroId}/matchups`);
   return { matchups, error, isLoading };
 }
 
@@ -27,18 +27,14 @@ export function useHeroItems(heroId: number) {
     error,
     isLoading,
   } = useSWR<IHeroItems>(
-    `${apiUrl}/heroes/${heroId}/itemPopularity`,
-    fetcher,
-    revalidateProperties,
+    `${apiUrl}/heroes/${heroId}/itemPopularity`
   );
   return { items, error, isLoading };
 }
 
 export function useHeroBestPlayers(hero_id: number) {
   const { data, error, isLoading } = useSWR<IHeroRankings>(
-    `${apiUrl}/rankings?hero_id=${hero_id}`,
-    fetcher,
-    revalidateProperties,
+    `${apiUrl}/rankings?hero_id=${hero_id}`
   );
 
   const rankings = data?.rankings.filter((el) => el.name !== null);

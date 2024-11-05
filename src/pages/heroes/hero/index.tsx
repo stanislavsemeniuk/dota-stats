@@ -1,14 +1,15 @@
 import React from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 
-import { findHeroInfo } from '../../../static/heroes';
 import { assetsUrl, attributes } from '../../../helpers/assets';
 
 import styles from '../heroes.module.css';
 import { NavBar } from '../../../components';
+import { useConstantsContext } from '../../../context/СonstantsContext';
 
 function Hero() {
   const { heroId } = useParams();
+  const {findHeroInfo} = useConstantsContext()
   const hero = findHeroInfo(Number(heroId));
 
   if (!hero) {
